@@ -1,5 +1,6 @@
 import streamlit as st
 from data_cleaning import *
+import datetime
 
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -17,12 +18,34 @@ kw_extractor = get_kw_extractor()
 path = 'subreddit_2025-01-17.json'
 df = clean(path, extractor=kw_extractor)
 
+# additional cleaning/transformation
+df['date'] = df['timestamp'].dt.date
 
+
+# set date range selector
+today = datetime.datetime.now()
+last_year = today.year - 1
+jan_1 = datetime.date(last_year, 1, 1)
+dec_31 = datetime.date(today.year, 12, 31)
+
+d = st.date_input(
+    "Select the date range you want to see (working on this feature...)",
+    (jan_1, datetime.date(today.year, 1, 7)),
+    jan_1,
+    dec_31,
+    format="MM.DD.YYYY",
+)
+
+# Given d=(start_date, end_date), filter df to this specific range
+# start_date, end_date = d
+# df_filtered = df[(df['date'] >= start_date) & (df['date'] < end_date)]
+
+
+# post trend
 st.html(
     "<h3>Posts Trend in TikTok Subreddit</h3>"
     )
 # create time-series plot
-df['date'] = df['timestamp'].dt.date
 st.line_chart(df.groupby('date').size(),
               x_label = 'date',
               y_label = '# of reddit posts',
