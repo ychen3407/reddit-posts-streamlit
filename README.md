@@ -1,5 +1,5 @@
 # 🎈 Stramlit Project for Reddit Post Analysis
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-k14aisqvf6b.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://glowing-space-xylophone-x4vj796xwqrf65gp-8501.app.github.dev/)
 
 Last updated: 1/18/2025
 
