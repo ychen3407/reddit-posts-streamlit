@@ -9,10 +9,10 @@ In this repo, I included a sample .json file that I scraped recently from Reddit
 
 What this streamlit app look like:
 
-<img src="images/img1.png" width="400">
+<img src="images/img1.png" width="600">
 <p float="left">
-  <img src="images/img2.png" width="300" /> 
-  <img src="images/img3.png" width="300" />
+  <img src="images/img2.png" height="300" /> 
+  <img src="images/img3.png" height="300" />
 </p>
 
 Next Step:
